@@ -40,7 +40,7 @@ class ListsController < ApplicationController
 	private
 
 	def list_params
-	  params.require(:list).permit(:title, :category, :creator_id, item_ids: [], item_attributes: [:content, :creator_id, :list_id, :status])
+	  params.require(:list).permit(:title, :category, :creator_id, item_attributes: [:content, :creator_id, :list_id, :status, :category])
 	end
 
   def find_list

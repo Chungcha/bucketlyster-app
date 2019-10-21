@@ -41,11 +41,11 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-	  params.require(:user).permit(:username, :fullname, :age, :gender, list_ids: [], list_attributes: [:title, :category, :creator_id])
+	  params.require(:user).permit(:username, :password, :fullname, :age, :gender, lists_created_attributes: [:title, :creator_id])
 	end
 
   def find_user
-    @user = user.find(params[:id])
+    @user = User.find(params[:id])
   end
 
 end

@@ -1,23 +1,23 @@
-<%= render partial: "/shared/error_list", locals: {variable: @list} %>
+<%= render partial: "/shared/error_message", locals: {variable: @list} %>
 
 <%= form_for(@list) do |f| %>
 
    <%= f.label :title %>
    <%= f.text_field :title %>
 
-   <%= f.label :museum, "Visited museums" %>
-   <%= f.collection_check_boxes :museum_ids, :Museum.all, :id, :name %>
+   <%= f.hidden_field :creator_id, value: @creator.id%>
 
-   <%= f.label "Make a new museum" %>
-   <%= f.fields_for :museums, guest.museums.build do |museum_fields| %>
-      <%= museum_fields.label :name %>
-      <%= museum_fields.text_field :name %>
-      <%= museum_fields.label :location %>
-      <%= museum_fields.text_field :location %>
+   <%= f.label :items, "Add an item to your list" %>
+   <%= f.fields_for :items, @list.items.build do |item_fields| %>
+      <%= item_fields.label :content %>
+      <%= item_fields.text_field :content %>
+      <%= item_fields.label :status %>
+      <%= item_fields.collection_select :status, ["Not started yet", "In progress", "Finished"] %>
+      <%= item_fields.label :category %>
+      <%= item_fields.text_field :category %>
+      <%= item_fields.hidden_field :creator_id, value: @creator.id %>
+      <%= item_fields.hidden_field :list_id, value: @list.id %>
    <% end %>
 
-   <%= f.label :released %>
-   <%= f.check_box :released %> ---- for boolean attribute(true/false)
-
-   <%= f.submit "Create guest" %>
+   <%= f.submit "Create a List" %>
 <% end %>
