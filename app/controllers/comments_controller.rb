@@ -11,6 +11,7 @@ class CommentsController < ApplicationController
             @comment = @item.comments.create(comment_params)
 
         redirect_to item_path(@item)
+        # https://web-crunch.com/lets-build-with-ruby-on-rails-blog-with-comments/
     end
 
     def edit
@@ -23,9 +24,12 @@ class CommentsController < ApplicationController
     end
 
     def destroy
+        @item = Item.find(params[:item_id])
+        @comment = @item.comments.find(params[:id])
         @comment.destroy
 
-        #redirect_to
+        redirect_to item_path(@item)
+        # https://web-crunch.com/lets-build-with-ruby-on-rails-blog-with-comments/
     end    
 
     private
