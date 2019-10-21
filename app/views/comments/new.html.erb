@@ -1,0 +1,4 @@
+<%= form_for @comment do |f| %>
+<%= f.text_area :content %>
+<%= f.hidden_field :audience_id, :value=>@audience_id %>
+<%# I think this is wrong %>
