@@ -1,0 +1,23 @@
+<%= render partial: "/shared/error_list", locals: {variable: @list} %>
+
+<%= form_for(@list) do |f| %>
+
+   <%= f.label :title %>
+   <%= f.text_field :title %>
+
+   <%= f.label :museum, "Visited museums" %>
+   <%= f.collection_check_boxes :museum_ids, :Museum.all, :id, :name %>
+
+   <%= f.label "Make a new museum" %>
+   <%= f.fields_for :museums, guest.museums.build do |museum_fields| %>
+      <%= museum_fields.label :name %>
+      <%= museum_fields.text_field :name %>
+      <%= museum_fields.label :location %>
+      <%= museum_fields.text_field :location %>
+   <% end %>
+
+   <%= f.label :released %>
+   <%= f.check_box :released %> ---- for boolean attribute(true/false)
+
+   <%= f.submit "Create guest" %>
+<% end %>
