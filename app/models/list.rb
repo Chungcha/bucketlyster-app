@@ -4,5 +4,5 @@ class List < ApplicationRecord
   has_many :follows
   has_many :users, through: :follows 
   
-  has_many :items, source: "list_created"
+  has_many :items, source: "creator"
 end

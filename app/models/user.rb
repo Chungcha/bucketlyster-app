@@ -2,7 +2,7 @@ class User < ApplicationRecord
   has_many :lists_created, class_name: "List", foreign_key: "creator_id"
 
   has_many :items, foreign_key: "creator_id", dependent: :destroy
-  has_many :lists_created, through: :items
+  has_many :lists, through: :items, foreign_key: "creator_id"
 
   has_many :comments
   has_many :items, through: :comments
