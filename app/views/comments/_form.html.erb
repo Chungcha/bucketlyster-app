@@ -1,0 +1,12 @@
+<%#= form_for @comment do |f| %>
+<%#= f.text_area :content %>
+<%#= f.hidden_field :audience_id, :value=>@audience_id %>
+<%# I think this is wrong %>
+
+<%= simple_form_for([@item, @comment]) do |f| %>
+
+<%= f.input :content %>
+
+<%= f.button :submit, 'Leave a reply' %>
+
+<% end %>
