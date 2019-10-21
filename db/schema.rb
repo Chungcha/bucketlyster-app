@@ -10,18 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_21_195656) do
+ActiveRecord::Schema.define(version: 2019_10_21_165717) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.integer "audience_id"
+    t.integer "user_id"
     t.integer "item_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "follows", force: :cascade do |t|
-    t.integer "audience_id"
+    t.integer "user_id"
     t.integer "list_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -32,9 +32,9 @@ ActiveRecord::Schema.define(version: 2019_10_21_195656) do
     t.integer "creator_id"
     t.integer "list_id"
     t.string "status"
+    t.string "category"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "category"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -46,12 +46,12 @@ ActiveRecord::Schema.define(version: 2019_10_21_195656) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "password"
     t.string "fullname"
     t.integer "age"
     t.string "gender"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password"
   end
 
 end
