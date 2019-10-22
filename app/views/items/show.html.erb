@@ -1,0 +1,9 @@
+<h1>Item: <%= @item.content%></h1>
+
+
+<div>Comments of this item:</div>
+<ul>
+<% @item.comments.each do |comment| %>
+  <li><%= link_to comment.content, comment_path(comment)) %></li>
+<% end %>
+</ul>

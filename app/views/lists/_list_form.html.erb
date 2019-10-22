@@ -15,7 +15,7 @@
       <%= item_fields.collection_select :status, ["Not started yet", "In progress", "Finished"] %>
       <%= item_fields.label :category %>
       <%= item_fields.text_field :category %>
-      <%= item_fields.hidden_field :creator_id, value: @creator.id %>
+
       <%= item_fields.hidden_field :list_id, value: @list.id %>
    <% end %>
 

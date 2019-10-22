@@ -1,0 +1,17 @@
+<%= render partial: "shared/error_message", locals: {variable: @item} %>
+
+<%= form_for(@item) do |f| %>
+
+   <%= f.label :content %>
+   <%= f.text_field :content %>
+
+   <%= f.label :status %>
+   <%= f.text_field :status %>
+
+   <%= f.label :category %>
+   <%= f.text_field :category %>
+
+   <%= f.hidden_field :list_id, value: @item.list.id%>
+
+   <%= f.submit %>
+<% end %>
