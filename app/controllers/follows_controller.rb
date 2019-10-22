@@ -8,6 +8,7 @@ class FollowsController < ApplicationController
 
 
     def button
+        @list = List.find(params[:id])
         @follow = Follow.find_by(audience_id: session[:user_id], list_id: params[:id])
         if @follow
             @follow.destroy
