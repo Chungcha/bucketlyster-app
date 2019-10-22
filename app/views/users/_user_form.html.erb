@@ -9,14 +9,14 @@
    <%= f.text_field :password %>
 
    <%= f.label :fullname %>
-   <%= f.text_field :fullname %>
+   <%= f.text_field :fullname %><br><br>
 
-   <%= f.label :lists_created, "Add a new bucketlist:" %>
-   <%= f.fields_for :lists_created, @user.lists_created.build do |list_fields| %>
-      <%= list_fields.label :title %>
-      <%= list_fields.text_field :title %>
-      <%= list_fields.hidden_field :creator_id, value: @user.id %>
+   <%= f.label :lists, "Create a new bucketlist!"%>
+   <%= f.fields_for :lists, @user.lists.build do |field| %>
+      <%= field.label :title %>
+      <%= field.text_field :title %>
+      <%= field.hidden_field :creator_id, value: @user.id %>
    <% end %>
 
-   <%= f.submit "Create a user" %>
+   <%= f.submit %>
 <% end %>

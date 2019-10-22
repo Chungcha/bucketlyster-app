@@ -14,14 +14,14 @@ ActiveRecord::Schema.define(version: 2019_10_21_165717) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
-    t.integer "user_id"
+    t.integer "audience_id"
     t.integer "item_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "follows", force: :cascade do |t|
-    t.integer "user_id"
+    t.integer "audience_id"
     t.integer "list_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2019_10_21_165717) do
 
   create_table "items", force: :cascade do |t|
     t.string "content"
-    t.integer "creator_id"
     t.integer "list_id"
     t.string "status"
     t.string "category"

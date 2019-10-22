@@ -1,14 +1,18 @@
 class User < ApplicationRecord
-  has_many :lists_created, class_name: "List", foreign_key: "creator_id"
+  has_many :lists, foreign_key: "creator_id"
+  has_many :items, through: :lists, foreign_key: "creator_id"
+  has_many :follows, through: :lists, foreign_key: "creator_id"
+  has_many :loves, class_name: "Follow", foreign_key: "audience_id"
+  has_many :comments, foreign_key: "audience_id"
+ 
+  ## As a audience
+  has_many :love_lists, :through => :loves, :source => :list
+  has_many :creators, :through => :love_lists, :foreign_key => :creator_id
 
-  has_many :items, foreign_key: "creator_id", dependent: :destroy
-  has_many :lists, through: :items, foreign_key: "creator_id"
+  ## As a creator
+  has_many :audiences, :through => :follows, :class_name => "User"
 
-  has_many :comments
-  has_many :items, through: :comments
-
-  has_many :follows
-  has_many :lists, through: :follows
+  accepts_nested_attributes_for :lists
 
   # def lists_attributes=(list_attributes)
   #   list_attributes.values.each do |list_attribute|
