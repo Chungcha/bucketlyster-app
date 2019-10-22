@@ -1,3 +1,6 @@
-<%= @item.comments %>
+
+<% @item.comments.each do |comment| %>
+<%= comment.content %><br>
+<% end %>
 <%# <%= link_to "Delete", [comment.item, comment], method: :delete %>
 <%# what does [comment.item, comment] mean? %>
