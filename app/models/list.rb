@@ -19,4 +19,14 @@ class List < ApplicationRecord
     items.max_by { |item| item.comments.count }
   end
 
+  def self.search(search)
+    if search
+      # self.where(power_id: power)
+      self.all.select {}
+      #Lists.all.select { |list| list.title.match(/keyword/)}
+    else 
+      List.all
+    end
+  end
+
 end
