@@ -9,9 +9,10 @@ class CommentsController < ApplicationController
 
     def create
         @item = Item.find(params[:item_id])
-            @comment = @item.comments.create(comment_params)
+        @comment = @item.comments.create(comment_params)
 
         redirect_to item_path(@item)
+        byebug
         # https://web-crunch.com/lets-build-with-ruby-on-rails-blog-with-comments/
     end
 
@@ -42,7 +43,7 @@ class CommentsController < ApplicationController
 
     private
     def comment_params
-        params.require(:comment).permit(:content, :user_id,:item_id)
+        params.require(:comment).permit(:content, session[:user_id], :item_id)
     end
 
 end

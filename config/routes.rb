@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :follows, only: [:create, :destroy]
-  resources :comments
-  resources :items
+
+  resources :items do 
+    resources :comments
+  end
   resources :lists
   get '/users/home' => 'users#home'
   resources :users 
