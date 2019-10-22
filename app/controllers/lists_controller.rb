@@ -2,6 +2,7 @@ class ListsController < ApplicationController
   before_action :find_list, only: [:show, :edit, :update]
 
 	def index
+			@user = User.find(session[:user_id])
 	    @lists = List.all
 	end 
 	
@@ -40,7 +41,7 @@ class ListsController < ApplicationController
 	private
 
 	def list_params
-	  params.require(:list).permit(:title, :category, :creator_id, item_attributes: [:content, :creator_id, :list_id, :status, :category])
+	  params.require(:list).permit(:title, :category, :creator_id, items_attributes: [:content, :list_id, :status, :category])
 	end
 
   def find_list

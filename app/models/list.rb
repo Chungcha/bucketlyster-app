@@ -5,4 +5,6 @@ class List < ApplicationRecord
   has_many :items
   has_many :comments, through: :items
   
+  accepts_nested_attributes_for :items
+  
 end

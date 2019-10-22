@@ -5,14 +5,14 @@
    <%= f.label :title %>
    <%= f.text_field :title %>
 
-   <%= f.hidden_field :creator_id, value: current_user.id %>
+   <%= f.hidden_field :creator_id, value: session[:user_id] %>
 
    <%= f.label :items, "Add an item to your list" %>
    <%= f.fields_for :items, @list.items.build do |item_fields| %>
       <%= item_fields.label :content %>
       <%= item_fields.text_field :content %>
       <%= item_fields.label :status %>
-      <%= item_fields.collection_select :status, ["Not started yet", "In progress", "Finished"] %>
+      <%= item_fields.select :status, ["Not started yet", "In progress", "Finished"]%>
       <%= item_fields.label :category %>
       <%= item_fields.text_field :category %>
 
