@@ -1,9 +1,9 @@
 class ListsController < ApplicationController
-  before_action :find_list, only: [:show, :edit, :update]
+	before_action :find_list, only: [:show, :edit, :update]
+	before_action :require_logged_in
 
 	def index
-			@user = User.find(session[:user_id])
-	    @lists = List.all
+			@lists = List.all
 	end 
 	
 	def show

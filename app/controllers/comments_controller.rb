@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+	before_action :require_logged_in
 
     def create
         @item = Item.find(params[:item_id])
@@ -6,7 +7,7 @@ class CommentsController < ApplicationController
    
         redirect_to item_path(@item)
     end 
-
+ 
     def destroy
         @item = Item.find(params[:item_id])
         @comment = @item.comments.find(params[:id])

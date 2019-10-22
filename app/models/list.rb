@@ -7,4 +7,16 @@ class List < ApplicationRecord
   
   accepts_nested_attributes_for :items
   
+  def items_of_status(status)
+    items.where(status: status)
+  end
+
+  def items_of_category(category)
+    items.where(category: category)
+  end
+
+  def item_with_the_most_comments
+    items.max_by { |item| item.comments.count }
+  end
+
 end

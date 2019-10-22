@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
   resources :follows, only: [:create, :destroy]
 
+  
+  resources :lists
+  
   resources :items do 
     resources :comments, only: [:create, :destroy]
   end
-
-  resources :lists
   
   get '/users/home' => 'users#home'
   resources :users 

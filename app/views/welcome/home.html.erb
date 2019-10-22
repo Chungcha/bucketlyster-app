@@ -1,18 +1,4 @@
 <h1>Hi, <%= @user.name %></h1>
-<%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-  <input type=submit value='logout'>
-<% end %><br><br>
 
-<div>Bucketlists you have created:</div>
-<ul>
-<% @user.lists.each do |list| %>
-  <li><%= link_to list.title, list_path(list) %></li>
-<% end %>
-</ul>
-
-<div>Bucketlists you have followed:</div>
-<ul>
-<% @user.love_lists.each do |list| %>
-  <li><%= link_to list.title, list_path(list) %></li>
-<% end %>
-</ul>
+<%= link_to "See all the lists", lists_path %><br>
+<%= link_to "See my lists", user_path(@user) %>

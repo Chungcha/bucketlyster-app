@@ -1,15 +1,7 @@
-<h1>All the lists you have created:</h1>
+<h1>All the bucketlists in the website:</h1>
 
 <ul>
-  <% @user.lists.each do |list|%>
-    <li><%= list.title %></li>
-  <% end %>
-</ul>
-
-<h1>All the lists you have followed:</h1>
-
-<ul>
-  <% @user.love_lists.each do |list|%>
+  <% @lists.each do |list|%>
     <li><%= list.title %></li>
   <% end %>
 </ul>
