@@ -1,4 +1,5 @@
 class FollowsController < ApplicationController
+	before_action :require_logged_in
 
 
     # create_table "follows", force: :cascade do |t|

@@ -16,6 +16,8 @@ class User < ApplicationRecord
 
   accepts_nested_attributes_for :lists
 
+  validates :name, presence: true, uniqueness: {case_sensitive: false}
+
   # def lists_attributes=(list_attributes)
   #   list_attributes.values.each do |list_attribute|
   #     if list_attribute[:title].length != 0
@@ -24,5 +26,24 @@ class User < ApplicationRecord
   #     end
   #   end
   # end
+
+  def most_followed_list_of_me
+    my_list = List.all.select { |list| list.creator == self }
+    my_list.all.max_by { |list| list.follows.count }
+  end
+
+  #find lists of the creators whoes age is +-3 years from me
+  def lists_of_my_age_group
+    List.all.select { |list| list.creator.age >= self.age - 3 && list.creator.age <= self.age + 3 }
+  end
+
+  def lists_of_my_gender
+    List.all.select { |list| list.creator.gender == self.gender }
+  end
+
+  # def search_lists_with_keyword(keyword)
+  #   Lists.all.select { |list| list.title.match(/keyword/)}
+  # end
+
 
 end

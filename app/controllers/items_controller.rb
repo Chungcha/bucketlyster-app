@@ -1,12 +1,13 @@
 class ItemsController < ApplicationController
-  before_action :find_item, only: [:show, :edit, :update]
+	before_action :find_item, only: [:show, :edit, :update]
+	before_action :require_logged_in
 
 	def index
 	    @items = Item.all
 	end 
 	
 	def show
-  	end
+  end 
 
 	def new
 			@item = Item.new
@@ -15,7 +16,7 @@ class ItemsController < ApplicationController
 	def create
 	  @item = Item.new(item_params)
     if @item.save
-      redirect_to item_path(@item)
+      redirect_to list_path(@item.list)
     else
       render :new
     end

@@ -3,4 +3,6 @@ class Item < ApplicationRecord
   has_many :comments
   has_many :audiences, through: :comments
 
+
+
 end

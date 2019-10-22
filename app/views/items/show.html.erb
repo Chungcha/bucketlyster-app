@@ -3,15 +3,12 @@
 
 
 <div>Comments of this item:</div>
-<div><%= @item.comments.count %> comments </div>
+<div><%= @item.comments.count %> comments </div><br>
 <%= render "comments/comment" %>
 
-<div>Leave a comment: </div>
-<%= render "comments/form" %>
+<br><br><div>Leave a comment: </div>
+<%= render "comments/form" %><br><br>
+
+<%= link_to "Go back to the list", list_path(@item.list)%>
 
 
-<%# <ul> %>
-<%# @item.comments.each do |comment| %>
-  <%# <li><%= link_to comment.content, comment_path(comment))</li> %>
-<%# end %>
-<%# </ul> %>
