@@ -1,12 +1,8 @@
 <h1><%= @list.title%></h1>
 
-<<<<<<< HEAD
 <div>Creator: <%= @list.creator.name %></div>
 <%= render "follows/button" %>
 <%= @list.follows.count %>
-=======
-<div>by: <%= @list.creator.name %></div>
->>>>>>> nest_everything
 
 <ul>
 <% @list.items.each do |item| %>
