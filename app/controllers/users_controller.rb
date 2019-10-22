@@ -54,8 +54,4 @@ class UsersController < ApplicationController
     @user = User.find(session[:user_id])
   end
 
-  	def button_label
-		if 
-	end
-
 end
