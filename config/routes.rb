@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  resources :follows, only: [:create, :destroy]
+  # resources :follows, only: [:create, :destroy]
+  post '/lists/:id/button', to: "follows#button", as: "follow_user"
 
   resources :items do 
     resources :comments, only: [:create, :destroy]

@@ -1,6 +1,8 @@
 <h1>List: <%= @list.title%></h1>
 
 <div>Creator: <%= @list.creator.name %></div>
+<%= render "follows/button" %>
+<%= @list.follows.count %>
 
 <ul>
 <% @list.items.each do |item| %>

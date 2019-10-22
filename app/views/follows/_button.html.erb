@@ -1,0 +1,12 @@
+<%# <%= link_to "Follow", follow_user_path(:id) %> %>
+<%= button_to "Follow",     
+       follow_user_path, method: "POST" %>
+
+
+<%# form_for(@follow) do |f| %>
+
+<%#= f.hidden_field :list_id, value: :id %>
+<%#= f.hidden_field :audience_id, value: session[:user_id]%>
+<%#= f.submit :like %>
+
+<%# end %>
