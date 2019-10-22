@@ -3,10 +3,10 @@
 <%#= f.hidden_field :audience_id, :value=>@audience_id %>
 <%# I think this is wrong %>
 
-<%= simple_form_for([@item, @comment]) do |f| %>
+<%= form_for([@item, @item.comments.build]) do |f| %>
 
-<%= f.input :content %>
+<%= f.text_area :content %>
 
-<%= f.button :submit, 'Leave a reply' %>
+<%= f.button :submit %>
 
 <% end %>
