@@ -5,7 +5,7 @@
    <%= f.label :title %>
    <%= f.text_field :title %>
 
-   <%= f.hidden_field :creator_id, value: @creator.id%>
+   <%= f.hidden_field :creator_id, value: current_user.id %>
 
    <%= f.label :items, "Add an item to your list" %>
    <%= f.fields_for :items, @list.items.build do |item_fields| %>

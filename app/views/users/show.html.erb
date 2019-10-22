@@ -7,3 +7,10 @@
   <li><%= link_to list.title, list_path(list) %></li>
 <% end %>
 </ul>
+
+<div>Bucketlists you have followed:</div>
+<ul>
+<% @user.love_lists.each do |list| %>
+  <li><%= link_to list.title, list_path(list) %></li>
+<% end %>
+</ul>

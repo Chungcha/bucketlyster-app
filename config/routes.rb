@@ -3,12 +3,14 @@ Rails.application.routes.draw do
   resources :comments
   resources :items
   resources :lists
-  resources :users
+  get '/users/home' => 'users#home'
+  resources :users 
+
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
 
-  root 'welcome#home'
+  root 'welcome#home' 
 
 end

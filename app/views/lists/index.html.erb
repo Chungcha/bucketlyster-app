@@ -1,1 +1,7 @@
 <h1>All the lists of the Creator:</h1>
+
+<ul>
+  <% current_user.lists.each do |list|%>
+    <li><%= list.title %></li>
+  <% end %>
+</ul>
