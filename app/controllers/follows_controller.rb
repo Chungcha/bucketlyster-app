@@ -1,9 +1,5 @@
 class FollowsController < ApplicationController
 
-    def new
-        @follow = Follow.new
-    end
-
     def create
         @follow = Follow.create(follow_params)
     end
