@@ -1,7 +1,7 @@
 <h1>User: <%= @user.name%></h1>
 <h2>Name: <%= @user.fullname%></h2>
 
-<div>Bucketlists you created:</div>
+<div>Bucketlists you have created:</div>
 <ul>
 <% @user.lists.each do |list| %>
   <li><%= link_to list.title, list_path(list) %></li>
