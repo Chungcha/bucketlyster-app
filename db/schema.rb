@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 2019_10_21_165717) do
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "username"
-    t.string "password"
+    t.string "name"
+    t.string "password_digest"
     t.string "fullname"
     t.integer "age"
     t.string "gender"

@@ -1,22 +1,25 @@
 <%= render partial: "shared/error_message", locals: {variable: @user} %>
 
-<%= form_for(@user) do |f| %>
 
-   <%= f.label :username %>
-   <%= f.text_field :username %>
+<%= form_for @user, controller: 'users', action: 'create' do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
 
-   <%= f.label :password %>
-   <%= f.text_field :password %>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
 
-   <%= f.label :fullname %>
-   <%= f.text_field :fullname %><br><br>
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %>
 
-   <%= f.label :lists, "Create a new bucketlist!"%>
-   <%= f.fields_for :lists, @user.lists.build do |field| %>
-      <%= field.label :title %>
-      <%= field.text_field :title %>
-      <%= field.hidden_field :creator_id, value: @user.id %>
-   <% end %>
+  <%= f.label :fullname %>
+  <%= f.text_field :fullname %><br><br>
 
-   <%= f.submit %>
+  <%= f.label :lists, "Create your new bucketlist!"%>
+  <%= f.fields_for :lists, @user.lists.build do |field| %>
+     <%= field.label :title %>
+     <%= field.text_field :title %>
+     <%= field.hidden_field :creator_id, value: @user.id %>
+  <% end %>
+
+  <%= f.submit %>
 <% end %>

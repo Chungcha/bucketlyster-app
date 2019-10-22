@@ -1,5 +1,5 @@
-kailey = User.find_or_create_by(username: "kailey16", password: "1234", fullname: "Kailey Lee", age: 28, gender: "female")
-charlie = User.find_or_create_by(username: "char19", password: "5678", fullname: "Charlie Chung", age: 30, gender: "male")
+kailey = User.find_or_create_by(name: "kailey16", password_digest: "1234", fullname: "Kailey Lee", age: 28, gender: "female")
+charlie = User.find_or_create_by(name: "char19", password_digest: "5678", fullname: "Charlie Chung", age: 30, gender: "male")
 
 list1 = List.find_or_create_by(title: "Before 40", creator: kailey)
 list2 = List.find_or_create_by(title: "Before 60", creator: charlie)

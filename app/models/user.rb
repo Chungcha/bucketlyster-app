@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_secure_password
+  
   has_many :lists, foreign_key: "creator_id"
   has_many :items, through: :lists, foreign_key: "creator_id"
   has_many :follows, through: :lists, foreign_key: "creator_id"
