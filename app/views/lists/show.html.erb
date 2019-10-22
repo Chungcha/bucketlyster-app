@@ -8,4 +8,18 @@
 <% end %>
 </ul>
 
-<%= link_to "Add a New Item", new_item_path %>
+<%= form_for @list.items.build do |f| %>
+
+   <%= f.label :content %>
+   <%= f.text_field :content %>
+
+   <%= f.label :status %>
+   <%= f.select :status, ["Not started yet", "In progress", "Finished"]%>
+
+   <%= f.label :category %>
+   <%= f.text_field :category %>
+
+   <%= f.hidden_field :list_id, value: @list.id %>
+
+   <%= f.submit %>
+<% end %>

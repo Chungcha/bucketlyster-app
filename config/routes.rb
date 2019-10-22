@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :items do 
     resources :comments, only: [:create, :destroy]
   end
+
   resources :lists
+  
   get '/users/home' => 'users#home'
   resources :users 
 
