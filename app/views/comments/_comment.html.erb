@@ -1,6 +1,6 @@
 
 <% @item.comments.each do |comment| %>
 <%= comment.content %><br>
+<%= link_to "Delete", item_comment_path(@item, comment), method: :delete %>
 <% end %>
-<%# <%= link_to "Delete", [comment.item, comment], method: :delete %>
 <%# what does [comment.item, comment] mean? %>
