@@ -7,7 +7,10 @@
 <ul>
 <% @list.items.each do |item| %>
   <li><%= link_to item.content, item_path(item) %>
+    <% if @list.creator == current_user %>
+      <%= link_to "Edit", edit_item_path(item) %>
       <%= link_to "Delete", item_path(item), method: :delete %>
+    <% end %>
   </li>
 <% end %>
 </ul>

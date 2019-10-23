@@ -16,19 +16,45 @@
   </head>
 
   <body>
-      <div class="header">
-          <% if session[:user_id] %>
-              <div class="left">Hello <%= current_user.name %></div>
-              <div class="right"><%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
-              <input type=submit value='logout'>
-              <% end %></div>
-          <% else %>
-              <div class="right"><%= link_to "Login", login_path %></div>
-          <% end %>
+      <nav class="navbar navbar-expand-lg", style="background-color: #b18ea6;" >
+            <a class="navbar-brand" href="/">Bucketlyster</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <% if session[:user_id] %>
+                <li class="nav-item">
+                  <a class="nav-link" href="<%= user_path(current_user) %>">MyPage</a>
+                </li>
+                <% end %>
+                <% if session[:user_id] %>
+                    <li class="nav-item">
 
-          <div class="right"><%= link_to "Home", root_path %></div>
-          <div class="right"><%= link_to "My page", current_user %></div>
-      </div>
+                        <%= link_to "Logout", logout_path, method: :post %>
+                    </li>
+                <% else %> 
+                     <li class="nav-item">
+                        <a class="nav-link" href="<%= login_path %>">Login</a>
+                    </li>
+                <% end %>
+              </ul>
+
+              <% if session[:user_id] %>
+                <span class="navbar-text">
+                     Welcome back <%= current_user.name %>!
+                 </span>
+              <% else %>
+                 <span class="navbar-text">
+                     Welcome to the Bucketlyster!
+                </span>
+              <% end %>
+            </div>
+          </nav>
+          
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
