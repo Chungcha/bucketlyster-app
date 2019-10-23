@@ -2,19 +2,3 @@
   display: inline;
   color: red;
 }
-
-.header {
-  color: #233567;
-  font-style: normal;
-  font-size: larger;
-  background-color: #fbc1bc;
-  padding: 0.5cm;
-}
-
-.header div {
-  display: inline;
-}
-
-.right {
-  float: right;
-}

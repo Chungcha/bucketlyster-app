@@ -1,4 +1,5 @@
-<h1>Hi, <%= @user.name %></h1>
-
 <%= link_to "See all the lists", lists_path %><br>
+
+<% if session[:user_id] %>
 <%= link_to "See my lists", user_path(@user) %>
+<% end %>
