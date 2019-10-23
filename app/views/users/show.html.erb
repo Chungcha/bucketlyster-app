@@ -1,13 +1,15 @@
+<%= link_to "Edit my profile", edit_user_path(current_user) %>
+
 <div>Bucketlists you have created:</div>
 <ul>
-<% @user.lists.each do |list| %>
+<% current_user.lists.each do |list| %>
   <li><%= link_to list.title, list_path(list) %></li>
 <% end %>
 </ul>
 
 <div>Bucketlists you have followed:</div>
 <ul>
-<% @user.love_lists.each do |list| %>
+<% current_user.love_lists.each do |list| %>
   <li><%= link_to list.title, list_path(list) %></li>
 <% end %>
 </ul>

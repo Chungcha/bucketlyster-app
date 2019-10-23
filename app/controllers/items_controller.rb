@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-	before_action :find_item, only: [:show, :edit, :update]
+	before_action :find_item, only: [:show, :edit, :update, :destroy]
 	before_action :require_logged_in
 
 	def index
@@ -34,8 +34,8 @@ class ItemsController < ApplicationController
 	end
 
 	def destroy
-	  Item.destroy(params[:id])
-	  redirect_to items_path
+	  @item.destroy
+	  redirect_to list_path(@item.list)
 	end
 
 	private

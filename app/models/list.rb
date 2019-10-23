@@ -21,9 +21,7 @@ class List < ApplicationRecord
 
   def self.search(search)
     if search
-      # self.where(power_id: power)
-      self.all.select {}
-      #Lists.all.select { |list| list.title.match(/keyword/)}
+      self.all.select { |list| list.title.downcase.split.include?(search.downcase)}
     else 
       List.all
     end
