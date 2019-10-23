@@ -1,4 +1,16 @@
+/*
+*= require_tree .
+*= require_self
+*/
+
+
+#bucketlyster {
+  font-family: 'Merriweather', serif;
+}
+
 .field_with_errors {
   display: inline;
   color: red;
 }
+
+

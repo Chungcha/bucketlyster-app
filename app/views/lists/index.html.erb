@@ -1,15 +1,22 @@
-<h1>All the bucketlists in the website:</h1>
-
 <%= form_tag lists_path, method: :get do %>
   <p>
     <%= text_field_tag :search, params[:search] %>
     <%= button_tag "Search"%>
   </p>
 <% end %>
-<button><%= link_to "Advanced Search", new_search_path %></button>
 
-<ul>
+
+<a href="<%= new_search_path %>" class="btn btn-secondary">Advanced Search</a>
+
+<div class="card-deck">
   <% @lists.each do |list|%>
-    <li><%= link_to list.title, list_path(list) %></li>
+    <div class="card text-center" style="width: 18rem; background-color: #3c6382;">
+        <div class="card-body">
+          <h5 class="card-title"><%= list.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted">by <%= list.creator.name %></h6>
+          <a href="<%= list_path(list) %>" class="btn btn-primary">See this list</a>
+        </div>
+    </div>
   <% end %>
-</ul>
+</div>
+
