@@ -1,3 +1,8 @@
-<%= button_to "Follow",     
-       follow_user_path, method: "POST" %>
 
+<% if @list.follows.any? {|follow| follow.audience == current_user} %>
+   <h5><%= button_to "UnFollow #{@list.title}",     
+       follow_user_path, method: "POST" %></h5>
+<% else %>
+   <h5><%= button_to "Follow #{@list.title}", follow_user_path, 
+       method: "POST"  %></h5>
+<% end %>
