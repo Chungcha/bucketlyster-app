@@ -26,4 +26,19 @@ describe User do
         expect(User.new(name: "Joe ")).not_to be_valid
     end
 
+    let(:joe) {User.create(name: "Joe",
+    password_digest: "Password",
+    fullname: "Joe Shmoe",
+    age: 5,
+    gender: "Male"
+    )}
+
+    it "has a fullname" do
+        expect(joe.fullname).to eq("Joe Shmoe")
+    end
+
+    it "has a age" do
+        expect(joe.age).to be_a(Numeric)
+    end
+
   end
