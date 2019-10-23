@@ -19,4 +19,12 @@ class List < ApplicationRecord
     items.max_by { |item| item.comments.count }
   end
 
+  def self.search(search)
+    if search
+      self.all.select { |list| list.title.downcase.split.include?(search.downcase)}
+    else 
+      List.all
+    end
+  end
+
 end

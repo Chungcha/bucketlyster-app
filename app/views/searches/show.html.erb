@@ -1,0 +1,7 @@
+<h1>Lists with filters</h1>
+
+<ul>
+  <% @search.find_lists.each do |list| %>
+    <li><%= link_to list.title, list_path(list) %></li>
+  <% end %>
+</ul>

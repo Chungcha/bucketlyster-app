@@ -9,7 +9,7 @@
    <%= f.select :status, ["Not started yet", "In progress", "Finished"] %>
 
    <%= f.label :category %>
-   <%= f.text_field :category %>
+   <%= f.select :category, ["Food/Drink", "Travel/Destination", "Entertainment", "Nature/Wildlife", "Relationship", "Creativity", "Fashion/Beauty", "Other"] %>
 
    <%= f.hidden_field :list_id, value: %>
 

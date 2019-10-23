@@ -1,12 +1,10 @@
 class UsersController < ApplicationController
 
-  before_action :find_user, only: [:show, :edit, :update]
-
 	def home
 	end
 
 	def index
-	    @users = User.all
+	  @users = User.all
 	end 
 	
 	def show
@@ -28,6 +26,7 @@ class UsersController < ApplicationController
 	end
 
 	def edit
+		# byebug
 	end
 
 	def update
@@ -39,7 +38,7 @@ class UsersController < ApplicationController
 	end
 
 	def destroy
-	  User.destroy(params[:id])
+		current_user.destroy
 	  redirect_to users_path
 	end
 
@@ -47,11 +46,6 @@ class UsersController < ApplicationController
 
 	def user_params
 		params.require(:user).permit(:name, :password, :password_confirmation, :fullname, :age, :gender, lists_attributes: [:title, :creator_id])
-
 	end
-
-  def find_user
-    @user = User.find(session[:user_id])
-  end
 
 end

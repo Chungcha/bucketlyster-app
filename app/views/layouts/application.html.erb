@@ -18,13 +18,16 @@
   <body>
       <div class="header">
           <% if session[:user_id] %>
-              <div class="left">Welcome <%= current_user.name %></div>
+              <div class="left">Hello <%= current_user.name %></div>
               <div class="right"><%= form_tag ({controller: 'sessions', action: 'destroy', method: 'post'}) do %>
               <input type=submit value='logout'>
               <% end %></div>
           <% else %>
-              <%= link_to "Login", login_path %>
+              <div class="right"><%= link_to "Login", login_path %></div>
           <% end %>
+
+          <div class="right"><%= link_to "Home", root_path %></div>
+          <div class="right"><%= link_to "My page", current_user %></div>
       </div>
 
     <!-- Optional JavaScript -->

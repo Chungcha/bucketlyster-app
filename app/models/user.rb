@@ -41,9 +41,5 @@ class User < ApplicationRecord
     List.all.select { |list| list.creator.gender == self.gender }
   end
 
-  # def search_lists_with_keyword(keyword)
-  #   Lists.all.select { |list| list.title.match(/keyword/)}
-  # end
-
 
 end

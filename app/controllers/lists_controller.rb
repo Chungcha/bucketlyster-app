@@ -3,7 +3,7 @@ class ListsController < ApplicationController
 	before_action :require_logged_in
 
 	def index
-			@lists = List.all
+			@lists = List.search(params[:search])
 	end 
 	
 	def show
@@ -41,7 +41,7 @@ class ListsController < ApplicationController
 	private
 
 	def list_params
-	  params.require(:list).permit(:title, :category, :creator_id, items_attributes: [:content, :list_id, :status, :category])
+	  params.require(:list).permit(:title, :category, :creator_id, :search, items_attributes: [:content, :list_id, :status, :category])
 	end
 
   def find_list
