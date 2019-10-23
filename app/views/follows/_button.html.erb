@@ -1,5 +1,5 @@
 
-<% if @list.follows.any? {|follow| follow.audience_id == session[:user_id]} %>
+<% if @list.follows.any? {|follow| follow.audience == current_user} %>
    <h5><%= button_to "UnFollow #{@list.title}",     
        follow_user_path, method: "POST" %></h5>
 <% else %>

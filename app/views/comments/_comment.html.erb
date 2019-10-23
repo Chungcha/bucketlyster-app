@@ -1,4 +1,6 @@
-<% @item.comments.each do |comment| %>
-<%= comment.content %><br>
-<%= link_to "Delete", item_comment_path(@item, comment), method: :delete %>
+<% @item.comments.each do |comment| %><br>
+<%= comment.content %> -<%= link_to comment.audience.fullname, user_path(comment.audience) %>
+<% if current_user == comment.audience %>
+    (<%= link_to "delete comment", item_comment_path(@item, comment), method: :delete %>)
+<% end %>
 <% end %>
