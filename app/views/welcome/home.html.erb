@@ -1,13 +1,32 @@
 <div class="mainimage">
 </div>
- 
+<div class="home_spacer">
+</div>
+<div class="home_stats">
 <div class="container">
     <div class="row">
       <div class="col">
-        1 of 1
+        Most Followed List:
+        <br>
+        <span class="welcome_stats">
+          <%= pluralize(List.most_followed.follows.count, 'Follower')%>
+        </span>
+        <br>
+        <span class="welcome_title">
+          <%= link_to List.most_followed.title, list_path(List.most_followed)%>
+        </span>
       </div>
       <div class="col">
-        2 of 2
+        Most Commented Item:
+        <br>
+        <span class="welcome_stats">
+          <%= pluralize(Item.most_commented.comments.count, 'Comment')%>
+        </span>
+        <br>
+        <span class="welcome_title">
+          <%= link_to Item.most_commented.content, item_path(Item.most_commented)%>
+        </span>
       </div>
     </div>
+</div>
 </div>
