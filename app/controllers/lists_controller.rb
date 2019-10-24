@@ -3,7 +3,7 @@ class ListsController < ApplicationController
 	before_action :require_logged_in
 
 	def index
-			@lists = List.search(params[:search])
+			@lists = List.all
 	end 
 	
 	def show
