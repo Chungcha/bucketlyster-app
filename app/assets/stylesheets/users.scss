@@ -1,3 +1,39 @@
-// Place all the styles related to the Users controller here.
+/* // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+
+// .profile_box {
+//   margin: 5px;
+//   float: left;
+//   border: 1px solid black;
+// }
+
+// #main_show {
+//   font-size: 20px;
+//   color: red;
+//   border: solid;
+// }
+
+// div {
+//   border: 1px solid black;
+// }
+.main_user_show {
+  margin: 10px;
+  // border: 1px solid black;
+  max-height: 100%;
+}
+
+.other_info div {
+  border: .5px solid black;
+}
+
+// .other_info_box {
+//   border-left: none;
+// }
+
+.profile_container {
+  text-align: center;
+  border: 1px solid black;
+  margin-left: 10px;
+}

@@ -1,15 +1,68 @@
-<%= link_to "Edit my profile", edit_user_path(current_user) %>
-
-<div>Bucketlists you have created:</div>
-<ul>
-<% current_user.lists.each do |list| %>
-  <li><%= link_to list.title, list_path(list) %></li>
-<% end %>
-</ul>
-
-<div>Bucketlists you have followed:</div>
-<ul>
-<% current_user.love_lists.each do |list| %>
-  <li><%= link_to list.title, list_path(list) %></li>
-<% end %>
-</ul>
+<!-- <div id="main_show">
+  <div class= "profile_box">
+    <%= link_to "Edit my profile", edit_user_path(current_user) %>
+  </div>
+  <div class="user_info">
+    <div class = "user_created">
+      <h2>Bucketlists you have created:</h2>
+      <ul>
+      <% current_user.lists.each do |list| %>
+        <li><%= link_to list.title, list_path(list) %></li>
+      <% end %>
+      </ul>
+    </div>
+    <div class="user_followed">
+      <h2>Bucketlists you have followed:</h2>
+      <ul>
+        <% current_user.love_lists.each do |list| %>
+          <li><%= link_to list.title, list_path(list) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div> -->
+<!--*********************************-->
+<div class="container-fuild main_user_show">
+  <div class="row">
+    <div class="col profile_container">
+      <h1>PROFILE STUFF</h1>
+      <ul>
+        <li>Name: <%=@user.name%> </li>
+        <li>Full Name: <%=@user.fullname%> </li>
+        <li>Age: <%=@user.age%> </li>
+        <li>Gender: <%=@user.gender%> </li>
+        <li><%= link_to "Edit my profile", edit_user_path(current_user) %></li>
+      </ul>
+    </div>
+    <div class="col other_info">
+        <div class="container other_info_box">
+          <div class="row">
+            <div class="col">
+              <h5>Bucketlists you have created:</h5>
+              <ul>
+                <% current_user.lists.each do |list| %>
+                  <li><%= link_to list.title, list_path(list) %></li>
+                <% end %>
+              </ul>
+            </div>
+            <div class="col">
+              <h5>Bucketlists you have followed:</h5>
+              <ul>
+                <% current_user.love_lists.each do |list| %>
+                  <li><%= link_to list.title, list_path(list) %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col">
+                <h5>Comments you have made:</h5>
+                <% current_user.comments.each do |comment| %>
+                  <li><%= link_to comment.content, item_path(comment.item) %></li>
+                <% end %>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</div>
