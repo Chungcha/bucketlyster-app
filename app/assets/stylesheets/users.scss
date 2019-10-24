@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/ */
 
 
+/**************
 // .profile_box {
 //   margin: 5px;
 //   float: left;
@@ -37,3 +38,41 @@
   border: 1px solid black;
   margin-left: 10px;
 }
+********/
+
+.profile_title{
+  text-align: center;
+}
+
+.top_row {
+  position:relative;
+}
+
+.mini_stats {
+  bottom: 0;
+}
+
+.container {
+  border-radius:5%;
+  padding: 10px;
+  background-color: #f8f8fa;
+  margin: 20px;
+}
+
+.profile_div img {
+  border-radius: 10%;
+  width: 200px;
+  float:left;
+  margin-right: 10px;
+}
+
+.profile_into {
+
+}
+
+
+
+
+
+
+
