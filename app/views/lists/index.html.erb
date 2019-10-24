@@ -1,17 +1,27 @@
-<%= form_tag lists_path, method: :get do %>
-  <p>
-    <%= text_field_tag :search, params[:search] %>
-    <%= button_tag "Search"%>
-  </p>
-<% end %> 
+<div class="lists_search_form">
+<%= form_for Search.new, url: searches_path, method: :post do |f| %>
+  <div class="field">
+    <%= f.label :keywords %>
+    <%= f.text_field :keywords %>
 
-<a href="<%= new_search_path %>" class="btn btn-secondary">Advanced Search</a>
+    <%= f.label :age_group, "Age Range" %>
+    <%= f.text_field :min_age, size: 10 %> -
+    <%= f.text_field :max_age, size: 10 %>
 
-<div class="row">
+    <%= f.label :gender, "Gender" %>
+    <%= f.select :gender, ["", "Male", "Female"]%>
+
+    <%= f.submit "Search" %>
+  </div>
+<% end %>
+</div>
+
+
+<div class="row lists_path_row">
   <% @lists.each do |list|%>
   <div class="col-sm-3">
     <div class="card">
-      <img src="https://i.pinimg.com/564x/6f/2c/41/6f2c419eb014801d282dda82b0bbeb77.jpg" id="list_image" class="card-img-top" alt="list image">
+      <%= image_tag("img#{rand(1..20)}.jpg", class:"card-img-top",id: "list_image") %>
       <div class="card-body">
         <h5 class="card-title"><%= list.title %></h5>
         <h6 class="card-subtitle mb-2 text-muted">by <%= list.creator.name %></h6>

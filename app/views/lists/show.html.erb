@@ -1,32 +1,45 @@
-<h1><%= @list.title%></h1>
+<!-- <div class="container background"></div> -->
+<div class="container list_show">
+    <div class="row">
+      <div class="col-sm-8 list_info">
+          <div class="list_title"><%= @list.title%></div>
+          <div class="list_creator">by <%= @list.creator.name%></div><br>
+          <div class="follow_count">
+          has <%= @list.follows.count %> follows</div>
+          <div class="follow_button"><%= render "follows/button" %></div>
+          <ul>
+              <% @list.items.each do |item| %>
+                <li><%= link_to item.content, item_path(item) %></li>
+              <% end %>
+          </ul>
+          <% if current_user == @list.creator %>
+          <div class="delete_list_button">
+          <%= link_to "Delete this list", list_path(@list), method: :delete, class: "btn btn-secondary" %>
+          </div>
+          <% end %>
+      </div>
+      <% if current_user == @list.creator %>
+      <div class="col-sm-4">
+        <div class="item_form_wrapper">
+          <%= form_for @list.items.build do |f| %>
+            <%= f.label :content, "Add a new Item to your list!" %>
+            <%= f.text_field :content %><br><br>
 
-<div>Creator: <%= @list.creator.name %></div>
-<%= render "follows/button" %>
-<%= @list.follows.count %>
+            <%= f.label :status %>
+            <%= f.select :status, ["Not started yet", "In progress", "Finished"]%><br><br>
 
-<ul>
-<% @list.items.each do |item| %>
-  <li><%= link_to item.content, item_path(item) %>
-    <% if @list.creator == current_user %>
-      <%= link_to "Edit", edit_item_path(item) %>
-      <%= link_to "Delete", item_path(item), method: :delete %>
-    <% end %>
-  </li>
-<% end %>
-</ul>
+            <%= f.label :category %>
+            <%= f.select :category, ["Food/Drink", "Travel/Destination", "Entertainment", "Nature/Wildlife", "Relationship", "Creativity", "Fashion/Beauty", "Other"] %><br><br>
 
-<%= form_for @list.items.build do |f| %>
+            <%= f.hidden_field :list_id, value: @list.id %>
 
-   <%= f.label :content %>
-   <%= f.text_field :content %>
+            <%= f.submit %>
+            <% end %>
+          </div>
+        </div>
+        <% end %>
+    </div>
+</div>
 
-   <%= f.label :status %>
-   <%= f.select :status, ["Not started yet", "In progress", "Finished"]%>
 
-   <%= f.label :category %>
-   <%= f.select :category, ["Food/Drink", "Travel/Destination", "Entertainment", "Nature/Wildlife", "Relationship", "Creativity", "Fashion/Beauty", "Other"] %>
 
-   <%= f.hidden_field :list_id, value: @list.id %>
-
-   <%= f.submit %>
-<% end %>

@@ -1,4 +1,4 @@
-.row {
+.lists_path_row {
   padding-left: 150px;
   padding-right: 150px;
 }
@@ -9,4 +9,72 @@
 #list_image.card-img-top {
   width: 260px;
   height: 300px;
+}
+
+.lists_search_form {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-weight: 600;
+}
+
+.container.list_show {
+  padding: 50px; 
+  font-weight: 600;
+  margin-top: 50px;
+  height: 1500px;
+  z-index: 1;
+}
+.container.background {
+  height: 1200px;
+  width: auto;
+  background-image: url("img9.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.6;
+}
+
+.col-sm-8.list_info {
+  border-style: groove;
+  border-block: 1px;
+  border-radius: 3px;
+  margin-top: 50px;
+  padding: 50px; 
+  z-index: 2;
+}
+
+.item_form_wrapper {
+  position: fixed;
+  width: 25%;
+  border-style: groove;
+  border-block: 1px;
+  border-radius: 3px;
+  padding: 50px; 
+  margin-top: 50px;
+  z-index: 2;
+}
+
+.list_title {
+  text-align: center;
+  font-size: 25px;
+}
+
+.list_creator {
+  text-align: right;
+  font-size: 20px;
+}
+
+.follow_count {
+  text-align: right;
+  color: #17a2b8;
+}
+
+.follow_button {
+  text-align: right;
+}
+
+.delete_list_button {
+  text-align: right;
 }

@@ -3,10 +3,10 @@
 *= require_self
 */
 
- 
 #bucketlyster {
   font-family: 'Montserrat', sans-serif;
   background-color: white;
+  color: #204969;
 }
 
 .field_with_errors {
