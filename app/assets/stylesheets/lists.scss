@@ -1,8 +1,12 @@
-.card-deck {
-  padding-left: 100px;
-  padding-right: 100px;
+.row {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+.col-sm-3 {
+  padding-bottom: 40px;
 }
 
-.btn btn-secondary {
-  color: white;
+#list_image.card-img-top {
+  width: 260px;
+  height: 300px;
 }

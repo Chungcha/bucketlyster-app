@@ -5,16 +5,16 @@
    <%= f.label :title %>
    <%= f.text_field :title %>
 
-   <%= f.hidden_field :creator_id, value: session[:user_id] %>
+   <%= f.hidden_field :creator_id, value: session[:user_id] %><br><br>
 
-   <%= f.label :items, "Add an item to your list" %>
+   <%= f.label :items, "Add an item to your list" %><br>
    <%= f.fields_for :items, @list.items.build do |item_fields| %>
       <%= item_fields.label :content %>
       <%= item_fields.text_field :content %>
       <%= item_fields.label :status %>
       <%= item_fields.select :status, ["Not started yet", "In progress", "Finished"]%>
       <%= item_fields.label :category %>
-      <%= item_fields.text_field :category %>
+      <%= item_fields.select :category, ["Food/Drink", "Travel/Destination", "Entertainment", "Nature/Wildlife", "Relationship", "Creativity", "Fashion/Beauty", "Other"] %>
 
       <%= item_fields.hidden_field :list_id, value: @list.id %>
    <% end %>

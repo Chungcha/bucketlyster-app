@@ -1,11 +1,36 @@
-  
-<%= form_for @user, url: login_path, method: :post do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
+<div>
+  <%= form_for @user, url: login_path, method: :post do |f| %>
+  <div class="form-group" placeholder="Username">
+    <%= f.label :name %>
+    <div class="form-control"><%= f.text_field :name %></div>
+  </div>
 
-<%= f.label :password %>
-<%= f.password_field :password %>
+  <div class="form-group">
+    <%= f.label :password %>
+    <div class="form-control"><%= f.password_field :password %></div>
+  </div>
 
-<%= f.submit "log in" %>
-Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
-<% end %> 
+  <div><%= f.submit "log in" %></div>
+
+
+  Or <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
+  <% end %> 
+</div>
+
+
+
+
+
+
+<form class="new_user" id="new_user" action="/login" accept-charset="UTF-8" method="post">
+  <input type="hidden" name="authenticity_token" value="Rx3JQQZOfUxZwAqXZVj+CXcMAnY3yFqpnMUYM03aUFvyh2yt4INiRcMbq2KoomANa/4eU5VIc7VeXnYE1/kgeQ==">
+    <div class="form-group">
+      <label for="user_name">Username</label>
+      <input class="form-control" name="user[name]" id="user_name" type="text" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <label for="user_password">Password</label>
+      <input type="password" name="user[password]" class="form-control" id="user_password" placeholder="Password">
+    </div>
+    <button type="submit" name="commit" class="btn btn-secondary">Log In</button>
+  </form>

@@ -5,7 +5,8 @@
 
 
 #bucketlyster {
-  font-family: 'Merriweather', serif;
+  font-family: 'Montserrat', sans-serif;
+  background-color: white;
 }
 
 .field_with_errors {
@@ -13,4 +14,11 @@
   color: red;
 }
 
+.navbar-expand-lg {
+  background-color: #faf5ef;color: #204969;
+}
 
+a {
+  padding-top: 7px;
+  color: #204969;
+}
