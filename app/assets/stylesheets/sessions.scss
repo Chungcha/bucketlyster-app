@@ -1,0 +1,24 @@
+.login_form {
+  font-weight: 500;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  border-style: groove;
+  border-block: 1px;
+  border-radius: 3px;
+  padding: 70px; 
+}
+
+.background{
+  height: 800px;
+  width: auto;
+  background-image: url("img6.jpeg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  opacity: 0.6;
+} 

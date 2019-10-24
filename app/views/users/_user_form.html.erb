@@ -2,30 +2,30 @@
 
 
 <%= form_for current_user do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.label :name, "Username" %>
+  <%= f.text_field :name %><br><br>
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password %><br><br>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation %><br><br>
 
   <%= f.label :fullname %>
-  <%= f.text_field :fullname %>
+  <%= f.text_field :fullname %><br><br>
 
   <%= f.label :age %>
-  <%= f.select :age, (1..110) %>
+  <%= f.select :age, (1..110) %><br><br>
 
   <%= f.label :gender %>
   <%= f.select :gender, ["Male", "Female", ""] %><br><br><br>
 
-  <%= f.label :lists, "Create your first Bucketlist!"%><br><br>
+  <%= f.label :lists, "Add your first Bucketlist! (Optional)"%><br><br>
   <%= f.fields_for :lists, current_user.lists.build do |field| %>
      <%= field.label :title %>
      <%= field.text_field :title %>
      <%= field.hidden_field :creator_id, value: current_user.id %>
   <% end %>
-
+  
   <%= f.submit %>
 <% end %>
