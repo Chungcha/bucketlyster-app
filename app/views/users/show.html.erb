@@ -1,106 +1,66 @@
-<!--***************
-<div class="container-fuild main_user_show">
-  <div class="row">
-    <div class="col profile_container">
-      <h1>PROFILE STUFF</h1>
-      <ul>
-        <li>Name: <%=@user.name%> </li>
-        <li>Full Name: <%=@user.fullname%> </li>
-        <li>Age: <%=@user.age%> </li>
-        <li>Gender: <%=@user.gender%> </li>
-        <li><%= link_to "Edit my profile", edit_user_path(current_user) %></li>
-      </ul>
-    </div>
-    <div class="col other_info">
-        <div class="container other_info_box">
-          <div class="row">
-            <div class="col">
-              <h5>Bucketlists you have created:</h5>
-              <ul>
-                <% current_user.lists.each do |list| %>
-                  <li><%= link_to list.title, list_path(list) %></li>
-                <% end %>
-              </ul>
-            </div>
-            <div class="col">
-              <h5>Bucketlists you have followed:</h5>
-              <ul>
-                <% current_user.love_lists.each do |list| %>
-                  <li><%= link_to list.title, list_path(list) %></li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-          <div class="row">
-              <div class="col">
-                <h5>Comments you have made:</h5>
-                <% current_user.comments.reverse.each do |comment| %>
-                  <li><%= link_to comment.content, item_path(comment.item) %> - <%= comment.created_at.strftime("%Y-%m-%d at %H:%M%P") %></li>
-                <% end %>
+<div class="outside_container_show">
+  <div class="profile_box_start"> </div>
+    <div class="container container_main">
+      <div class="row top_row">
+        <div class="col profile_div">
+          <h1 class="profile_title">Lyster Bio</h1>
+          <img src= "/assets/profile_pic" />
+          <div class= "profile_info">
+            <h3><%=@user.name%></h3>
+            <h4><%=@user.fullname%> is a <%=@user.age%> year old <%=@user.gender.downcase%></h4>
+            <h4><%= link_to "Edit my profile", edit_user_path(current_user) %></h4>
+            <div id="mini_stats" class="container">
+                <div class="row">
+                  <div class="col">
+                    <h6><%= current_user.lists.count %></h6>
+                    <p><%= current_user.lists.count == 1 ? "List" : "Lists" %></p>
+                  </div>
+                  <div class="col">
+                    <h6><%= current_user.total_follows %></h6>
+                    <p><%= current_user.total_follows == 1 ? "Follow" : "Follows" %></p>
+                  </div>
+                  <div class="col">
+                    <h6><%= current_user.love_lists.count %></h6>
+                    <p>Following</p>
+                  </div>
+                  <div class="col">
+                    <h6><%= current_user.comments.count %></h6>
+                    <p><%= current_user.comments.count == 1 ? "Comment" : "Comments" %></p>
+                  </div>
+                </div>
               </div>
           </div>
         </div>
-    </div>
-  </div>
-</div>
-*******************-->
-<div class="container">
-  <div class="row top_row">
-    <div class="col profile_div">
-      <h1 class="profile_title">Lyster Bio</h1>
-      <img src= "/assets/profile_pic" />
-      <div class= "profile_info">
-        <h3><%=@user.name%></h3>
-        <h4><%=@user.fullname%> is a <%=@user.age%> year old <%=@user.gender.downcase%></h4>
-        <h4><%= link_to "Edit my profile", edit_user_path(current_user) %></h4>
-        <div class="container mini_stats">
-            <div class="row">
-              <div class="col">
-                <h6><%= current_user.lists.count %></h6>
-                <p><%= current_user.lists.count == 1 ? "List" : "Lists" %></p>
-              </div>
-              <div class="col">
-                <h6><%= current_user.total_follows %></h6>
-                <p><%= current_user.total_follows == 1 ? "Follow" : "Follows" %></p>
-              </div>
-              <div class="col">
-                <h6><%= current_user.love_lists.count %></h6>
-                <p>Following</p>
-              </div>
-              <div class="col">
-                <h6><%= current_user.comments.count %></h6>
-                <p><%= current_user.comments.count == 1 ? "Comment" : "Comments" %></p>
-              </div>
-            </div>
+     
+      <div class="container">
+        <div class="row">
+          <div class="col buckets_list">
+            <h5>Bucketlists you have created:</h5>
+            <ul>
+              <% current_user.lists.each do |list| %>
+                <li><%=link_to list.title, list_path(list)%></li>
+              <% end %>
+            </ul>
           </div>
+          <div class="col followed_list">
+            <h5>Bucketlists you have followed:</h5>
+            <ul>
+              <% current_user.love_lists.each do |list| %>
+                <li><%= link_to list.title, list_path(list) %></li>
+              <% end %>
+            </ul>
+          </div>
+          <div class="col comments_list">
+            <h5>Comments you have made:</h5>
+            <% current_user.comments.reverse.each do |comment| %>
+              <li>  <%= link_to comment.content, item_path(comment.item) %> - <%= comment.created_at.strftime("%Y-%m-%d at %l:%M%P") %></li>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <h5>Bucketlists you have created:</h5>
-        <ul>
-          <% current_user.lists.each do |list| %>
-            <li><%=link_to list.title, list_path(list)%></li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="col">
-        <h5>Bucketlists you have followed:</h5>
-        <ul>
-          <% current_user.love_lists.each do |list| %>
-            <li><%= link_to list.title, list_path(list) %></li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="col">
-        <h5>Comments you have made:</h5>
-        <% current_user.comments.reverse.each do |comment| %>
-          <li><%= link_to comment.content, item_path(comment.item) %> - <%= comment.created_at.strftime("%Y-%m-%d at %l:%M%P") %></li>
-        <% end %>
-      </div>
-    </div>
+  <div class="profile_box_end">
   </div>
 </div>
 
