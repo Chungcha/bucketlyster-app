@@ -14,18 +14,12 @@ class User < ApplicationRecord
   ## As a creator
   has_many :audiences, :through => :follows, :class_name => "User"
 
-  accepts_nested_attributes_for :lists
+  accepts_nested_attributes_for :lists, reject_if:
+  Proc.new {|attr| attr[:title].blank?}
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}
 
-  # def lists_attributes=(list_attributes)
-  #   list_attributes.values.each do |list_attribute|
-  #     if list_attribute[:title].length != 0
-  #       list = List.find_or_create_by(list_attribute)
-  #       self.lists << list
-  #     end
-  #   end
-  # end
+  
 
   def most_followed_list_of_me
     my_list = List.all.select { |list| list.creator == self }

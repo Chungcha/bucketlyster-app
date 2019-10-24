@@ -1,7 +1,7 @@
 .lists_path_row {
   padding-left: 150px;
   padding-right: 150px;
-}
+} 
 .col-sm-3 {
   padding-bottom: 40px;
 }
@@ -13,10 +13,14 @@
 
 .lists_search_form {
   text-align: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 150px;
+  margin-right: 150px;
   font-weight: 600;
-  
+  border-style: solid;
+  border-color: #ac8daf ;
 }
 
 .container.list_show {

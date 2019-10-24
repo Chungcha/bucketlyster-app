@@ -1,7 +1,36 @@
-<h1>Lists with filters</h1>
+<div class="filtered_lists">
+  Bucketlists with filters you choose!
+  <a href="<%= lists_path %>" class="btn btn-outline-secondary to_all_lists">Go back to All Lists</a>
+</div>
+<div class="lists_search_form">
+    <%= form_for @search, url: searches_path, method: :post do |f| %>
+      <div class="field">
+        <%= f.label :keywords %>
+        <%= f.text_field :keywords %>
+    
+        <%= f.label :age_group, "Age Range" %>
+        <%= f.text_field :min_age, size: 10 %> - 
+        <%= f.text_field :max_age, size: 10 %>
+    
+        <%= f.label :gender, "Gender" %>
+        <%= f.select :gender, ["", "Male", "Female"]%>
+    
+        <%= f.submit "Search" %>
+      </div>
+    <% end %>
+</div> 
 
-<ul>
-  <% @search.find_lists.each do |list| %>
-    <li><%= link_to list.title, list_path(list) %></li>
-  <% end %>
-</ul>
+<div class="row lists_path_row">
+    <% @search.find_lists.each do |list|%>
+    <div class="col-sm-3">
+      <div class="card">
+        <%= image_tag("img#{rand(1..20)}.jpg", class:"card-img-top",id: "list_image") %>
+        <div class="card-body">
+          <h5 class="card-title"><%= list.title %></h5>
+          <h6 class="card-subtitle mb-2 text-muted">by <%= list.creator.name %></h6>
+          <a href="<%= list_path(list) %>" class="btn btn-outline-secondary">See this list</a>
+        </div> 
+      </div>
+    </div>
+    <% end %>
+  </div>
