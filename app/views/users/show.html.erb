@@ -72,7 +72,7 @@
 <div class="container">
   <div class="row top_row">
     <div class="col profile_div">
-      <h1 class="profile_title">PROFILE STUFF</h1>
+      <h1 class="profile_title">Lyster Bio</h1>
       <img src= "/assets/profile_pic" />
       <div class= "profile_info">
         <h3><%=@user.name%></h3>
@@ -81,12 +81,16 @@
         <div class="container mini_stats">
             <div class="row">
               <div class="col">
-                <h6><%= current_user.love_lists.count %></h6>
+                <h6><%= current_user.lists.count %></h6>
+                <p>Lists (these are all plural)</p>
+              </div>
+              <div class="col">
+                <h6><%= current_user.total_follows %></h6>
                 <p>Followers</p>
               </div>
               <div class="col">
-                <h6><%= current_user.lists.count %></h6>
-                <p>Lists</p>
+                <h6><%= current_user.love_lists.count %></h6>
+                <p>Following</p>
               </div>
               <div class="col">
                 <h6><%= current_user.comments.count %></h6>

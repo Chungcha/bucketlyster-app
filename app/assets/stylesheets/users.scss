@@ -45,11 +45,15 @@
 }
 
 .top_row {
-  position:relative;
+  // position:relative;
 }
 
 .mini_stats {
-  bottom: 0;
+  // display: flex;
+  // align-items: flex-end;
+  // flex-wrap: nowrap;
+  // justify-content: center;
+  // align-content: flex-start;
 }
 
 .container {
@@ -60,6 +64,7 @@
 }
 
 .profile_div img {
+  
   border-radius: 10%;
   width: 200px;
   float:left;

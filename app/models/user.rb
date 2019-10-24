@@ -41,5 +41,13 @@ class User < ApplicationRecord
     List.all.select { |list| list.creator.gender == self.gender }
   end
 
-
+  def total_follows
+    follows = []
+    self.lists.each do |list| 
+      list.follows.each do |follow|
+        follows << follow
+      end
+    end
+    follows.count
+  end
 end
