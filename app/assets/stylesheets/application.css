@@ -2,6 +2,9 @@
 *= require_tree .
 *= require_self
 */
+a {
+  color: #204969 !important;
+}
 
 #bucketlyster {
   font-family: 'Montserrat', sans-serif;
@@ -14,12 +17,10 @@
   color: red;
 }
 
-.navbar-expand-lg {
+.navbar {
   background-color: #faf5ef;
   color: #204969;
   font-weight: 600;
+  height: 60px;
 }
 
-a {
-  padding-top: 7px;
-}
