@@ -10,3 +10,100 @@
   border-radius: 3px;
   padding: 70px; 
 }
+/* // Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/ */
+
+.profile_title{
+  text-align: center;
+}
+
+.profile_box_start {
+  height: 50px;
+}
+.profile_box_end {
+  height: 50px;
+}
+
+.container_main {
+  border-radius:5%;
+  padding: 10px;
+  background-color:rgba(248, 248, 250, 0.7);
+  margin: 10px, 20px, 20px, 20px;
+
+
+}
+
+.profile_div img { 
+  border-radius: 10%;
+  width: 200px;
+  float:left;
+  margin-right: 10px;
+}
+.outside_container_show{
+  height: 90%;
+  width: auto;
+  background-image: url("main_image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  opacity: 0.9;
+}
+
+.buckets_list ul {
+  list-style: none;
+  padding: 0;
+}
+.buckets_list li {
+  padding-left: 1.3em;
+  list-style: none;
+}
+
+.buckets_list li:before {
+  content: "\f03a"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+
+.followed_list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.followed_list li {
+  padding-left: 1.3em;
+  list-style: none;
+}
+
+.followed_list li:before {
+  content: "\f004"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+
+.comments_list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.comments_list li {
+  padding-left: 1.3em;
+  list-style: none;
+}
+
+.comments_list li:before {
+  content: "\f075"; /* FontAwesome Unicode */
+  font-family: FontAwesome;
+  display: inline-block;
+  margin-left: -1.3em; /* same as padding-left set on li */
+  width: 1.3em; /* same as padding-left set on li */
+}
+
+
+
