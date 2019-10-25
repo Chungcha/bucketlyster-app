@@ -2,53 +2,33 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body{
-    margin-top:20px;
-    background:#DCDCDC;
-}
-.thumb-sm {
-    height: 36px;
-    width: 36px;
-}
-.card-box {
-    padding: 20px;
-    border-radius: 3px;
-    margin-bottom: 30px;
-    background-color: #fff;
-}
-taskList {
-    min-height: 40px;
-    margin-bottom: 0
-}
-
-.taskList li {
-    background-color: #fff;
-    border: 1px solid rgba(121, 121, 121, .2);
+.comments_display{
+    margin: auto;
+    width: 80%;
+    border: 3px solid green;
     padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 3px
+    text-align: center;
 }
 
-.taskList li:last-of-type {
-    margin-bottom: 0
+#comment_form{
+    margin: auto;
+    width: 80%;
+    border: 3px solid green;
+    padding: 10px;
+    text-align: center;
 }
 
-.taskList a {
-    font-size: 13px
+.card-columns {
+      column-count: 2;
+      
 }
-
-.taskList .checkbox {
-    margin-left: 20px;
-    margin-top: 5px
-}
-.text-muted {
-    color: #98a6ad!important;
-}
-
-.time_ago{
-    font-size:13px;
-}
-
-.comment_list_show {
-    margin: 0;
+.items_show_background{
+    padding-top:40px;
+    background-image: url("app/assets/images/clement-m-igX2deuD9lc-unsplash.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    background-size:conta
 }
