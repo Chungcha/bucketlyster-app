@@ -23,50 +23,44 @@
   border-color: #ac8daf ;
 }
 
-.container.list_show {
-  padding: 50px; 
-  font-weight: 600;
-  margin-top: 50px;
-  height: 1500px;
-  width: auto;
-  background-image: url("img9.jpg");
+
+
+////// List show page //////
+
+.list_show_two_column {
+  color: black !important;
+  background-image: url("img23.jpg");
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-  opacity: 0.7;
+  opacity: 0.9;
+}
+
+.list_show {
+  margin-top: 50px;
+  width: 100%;
+  height: auto;
   }
 
-// .container.background {
-//   height: 1200px;
-//   width: auto;
-//   background-image: url("img9.jpg");
-//   background-position: center center;
-//   background-repeat: no-repeat;
-//   background-attachment: fixed;
-//   background-size: cover;
-//   opacity: 0.6;
-// }
-
-
-
-.col-sm-8.list_info {
+.list_info {
+  font-weight: 600;
   border-style: groove;
-  border-block: 1px;
   border-radius: 3px;
-  margin-top: 50px;
-  padding: 50px; 
-  // background-color: white;
+  padding: 50px;
+  background-color:rgba(250, 245, 239, 0.6);
+  font-size: 20px;
 }
 
 .item_form_wrapper {
+  font-weight: 600;
   position: fixed;
   width: 25%;
   border-style: groove;
-  border-block: 1px;
   border-radius: 3px;
   padding: 50px; 
-  margin-top: 50px;
+  font-size: 17px;
+  background-color:rgba(250, 245, 239, 0.6);
 }
 
 .list_title {
@@ -76,12 +70,12 @@
 
 .list_creator {
   text-align: right;
-  font-size: 20px;
 }
 
 .follow_count {
   text-align: right;
-  color: #17a2b8;
+  color:white;
+  font-size: 17px;
 }
 
 .follow_button {
@@ -90,4 +84,29 @@
 
 .delete_list_button {
   text-align: right;
+}
+
+
+///////// new_list_path
+.new_list_background {
+  height: 800px;
+  width: auto;
+  background-image: url("main_image.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+}
+
+.new_list_form_wrapper {
+  font-size: 17px;
+  font-weight: 600;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  padding: 70px; 
+  background-color:rgba(248, 248, 250, 0.8);
 }

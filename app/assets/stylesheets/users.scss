@@ -13,29 +13,41 @@
 
 .profile_title{
   text-align: center;
+  font-weight: 600;
+  color:black;
+}
+.profile_info h3 {
+  font-weight: 600;
+  color:black;
+
 }
 
 .profile_box_start {
-  height: 50px;
+  height: 50px; 
 }
 .profile_box_end {
   height: 200px;
 }
 
 .container_main {
-  border-radius:5%;
+  // border-radius:5%;
   padding: 10px;
   background-color:rgba(248, 248, 250, 0.7);
   margin: 10px, 20px, 20px, 20px;
-
-
 }
+
+.profile_info {
+  padding-top: 30px;
+}
+
 
 .profile_div img { 
   border-radius: 10%;
-  width: 200px;
-  float:left;
-  margin-right: 10px;
+  height: 330px;
+  width: auto;
+  float: left;
+  margin-right: 10px; 
+  margin-bottom: 30px;
 }
 .outside_container_show{
   height: 90%;
@@ -48,7 +60,7 @@
   background-color: #464646;
   opacity: 0.9;
 }
-
+ 
 .buckets_list ul {
   list-style: none;
   padding: 0;
@@ -64,6 +76,10 @@
   display: inline-block;
   margin-left: -1.3em; /* same as padding-left set on li */
   width: 1.3em; /* same as padding-left set on li */
+}
+
+.become_black {
+  color: black;
 }
 
 .followed_list ul {
@@ -102,5 +118,13 @@
   width: 1.3em; /* same as padding-left set on li */
 }
 
-
+.three_rows {
+  background-color: rgba(0,77,97,0.8);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 0px;
+  font-size: 20px;
+  font-weight: 500;
+}
 
