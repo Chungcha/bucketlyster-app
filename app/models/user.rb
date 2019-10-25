@@ -44,4 +44,5 @@ class User < ApplicationRecord
     end
     follows.count
   end
+
 end
