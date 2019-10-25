@@ -4,7 +4,7 @@
 <div class="card-columns">
 <% @item.comments.each do |comment| %>
 
-    <div class="card each_comment" style="width: 18rem;">
+    <div class="card each_comment <%=["font1","font2","font3","font4","font5","font6","font7"].sample %>" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title"><%= comment.content %></h5>
                 <h6 class="card-subtitle mb-2 text-muted"><%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</h6>
