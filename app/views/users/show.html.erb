@@ -55,7 +55,7 @@
           <div class="col comments_list">
             <h5>Comments you have made:</h5>
             <% @user.comments.reverse.each do |comment| %>
-              <li>  <%= link_to comment.content, item_path(comment.item) %> - <%= comment.created_at.strftime("%Y-%m-%d at %l:%M%P") %></li>
+              <li>  <%= link_to comment.content, item_path(comment.item) %> - <%= distance_of_time_in_words(Time.now, comment.created_at)%></li>
             <% end %>
           </div>
         </div>
