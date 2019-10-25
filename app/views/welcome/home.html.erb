@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row">
       <div class="col">
-        Most Followed List
+        <div class="stat_title">Most Followed List</div>
         <% if Follow.all.length != 0 %>
         <br>
         <span class="welcome_stats">
@@ -14,12 +14,13 @@
         </span>
         <br>
         <span class="welcome_title">
-          <%= link_to List.most_followed.title, list_path(List.most_followed)%>
+          "<%= link_to List.most_followed.title, list_path(List.most_followed)%>"<br>
+          by <%= List.most_followed.creator.name %>
         </span>
         <% end %>
       </div>
       <div class="col">
-        Most Commented Item
+          <div class="stat_title">Most Commented Item</div>
         <br>
         <% if Comment.all.length != 0 %>
         <span class="welcome_stats">
@@ -27,7 +28,8 @@
         </span>
         <br>
         <span class="welcome_title">
-          <%= link_to Item.most_commented.content, item_path(Item.most_commented)%>
+          "<%= link_to Item.most_commented.content, item_path(Item.most_commented)%>"<br>
+          of <%= Item.most_commented.list.title %>
         </span>
         <% end %>
       </div>

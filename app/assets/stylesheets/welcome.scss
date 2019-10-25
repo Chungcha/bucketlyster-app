@@ -7,24 +7,34 @@
   background-attachment: fixed;
   background-size: cover;
   background-color: #464646;
-  // opacity: 0.9;
+  opacity: 0.9; 
 }   
 .welcome_stats{
-  color: #2ecc71;
+  color: #83142c;
   font-size: 30px;
 }
 .welcome_title{
-  color: #95a5a6;
+  color: black;
 }
 .home_spacer{
   background-color:#faf5ef;
   height:10px;
 }
 .home_stats{
-  background-color:#faf5ef;
   width: 100%;
-  height: 100px;
+  height: 250px;
+  padding-top: 10px;
   font-weight: 600;
   font-size: 20px;
   text-align: center;
+  opacity: 0.8;
+}
+
+.stat_title {
+  font-weight: 500;
+  width: 50%;
+  border-block: 1px;
+  border-style: solid;
+  padding: 5px;
+  margin-left: 135px;
 }
