@@ -20,6 +20,7 @@
     width: 80%;
     border: 1px solid rgb(32, 73, 105);
     border-radius: 0.25rem;
+    border-style: inset;
     background-color:rgb(32, 73, 105);
     padding: 10px;
     text-align: center;
@@ -65,4 +66,19 @@ font-family: 'Delius', cursive;
 }
 .font7{
 font-family: 'Crafty Girls', cursive;
+}
+
+textarea {
+    border:0; outline:0;
+    padding: 1em;
+    border-radius:8px;
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+    font-family: 'Merriweather', sans-serif;
+    box-shadow: (0 1px 1px rgba(black, 0.1));
+    resize: none;
+}
+.spacer_between_submit{
+    height:10px;
 }

@@ -2,17 +2,17 @@
 <h4 class="item_title"><%= @item.content%></h4>
 <h6><%= pluralize(@item.comments.count, "comment")%> for this item:</h6>
 <div class="card-columns">
-<% @item.comments.each do |comment| %>
-    <div class="card each_comment <%=["font1","font2","font3","font4","font5","font6","font7"].sample %>" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title"><%= comment.content %></h5>
-                <h6 class="card-subtitle mb-2 text-muted"><%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</h6>
-                <a href="#" class="card-link"><%= link_to comment.audience.fullname, user_path(comment.audience) %></a>
-                <a href="#" class="card-link"><% if current_user == comment.audience %>
-                    (<%= link_to "delete comment", item_comment_path(@item, comment), method: :delete %>)
-                    <% end %></a>
-            </div>
-    </div>
-<%end%>
-<div id="comment_form"><%= render "comments/form" %></div>
+    <% @item.comments.each do |comment| %>
+        <div class="card each_comment <%=["font1","font2","font3","font4","font5","font6","font7"].sample %>" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title"><%= comment.content %></h5>
+                    <h6 class="card-subtitle mb-2 text-muted"><%= distance_of_time_in_words(Time.now, comment.created_at)%> ago</h6>
+                    <a href="#" class="card-link"><%= link_to comment.audience.fullname, user_path(comment.audience) %></a>
+                    <a href="#" class="card-link"><% if current_user == comment.audience %>
+                        (<%= link_to "delete comment", item_comment_path(@item, comment), method: :delete %>)
+                        <% end %></a>
+                </div>
+        </div>
+    <%end%>
+<div id="comment_form" class="card"><%= render "comments/form" %></div>
 </div>

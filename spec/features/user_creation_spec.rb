@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "User creation", type: :feature do
     before do
       visit new_user_path
-      fill_in "Name", with: "Joey"
+      fill_in "Username", with: "Joey"
       fill_in "Password", with: "Password"
       fill_in "Password confirmation", with: "Password"
       fill_in "Fullname", with: "Joey Tribbiani"
