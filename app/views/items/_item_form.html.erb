@@ -1,17 +1,16 @@
 <%= render partial: "shared/error_message", locals: {variable: @item} %>
-
 <%= form_for(@item) do |f| %>
 
    <%= f.label :content %>
-   <%= f.text_field :content %>
+   <%= f.text_field :content %><br><br>
 
    <%= f.label :status %>
-   <%= f.select :status, ["Not started yet", "In progress", "Finished"] %>
+   <%= f.select :status, ["Not started yet", "In progress", "Finished"] %><br><br>
 
    <%= f.label :category %>
    <%= f.select :category, ["Food/Drink", "Travel/Destination", "Entertainment", "Nature/Wildlife", "Relationship", "Creativity", "Fashion/Beauty", "Other"] %>
 
-   <%= f.hidden_field :list_id, value: @item.list.id%>
+   <%= f.hidden_field :list_id, value: @item.list.id%><br><br>
 
    <%= f.submit %>
 <% end %>

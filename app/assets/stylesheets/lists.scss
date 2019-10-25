@@ -1,7 +1,7 @@
 .lists_path_row {
   padding-left: 150px;
   padding-right: 150px;
-} 
+}  
 .col-sm-3 {
   padding-bottom: 40px;
 }
@@ -74,7 +74,7 @@
 
 .follow_count {
   text-align: right;
-  color:white;
+  color: white;
   font-size: 17px;
 }
 
@@ -82,9 +82,16 @@
   text-align: right;
 }
 
-.delete_list_button {
+.edit_delete_buttons {
   text-align: right;
 }
+
+.status_radio {
+  text-align: right;
+  font_size: 10px;
+}
+
+
 
 
 ///////// new_list_path
@@ -109,4 +116,9 @@
   width: 40%;
   padding: 70px; 
   background-color:rgba(248, 248, 250, 0.8);
+}
+
+.progress {
+  margin-right: 150px;
+  margin-bottom: 20px;
 }

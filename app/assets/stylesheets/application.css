@@ -24,3 +24,21 @@ a {
   height: 60px;
 }
 
+.edit_forms {
+  color: #204969;
+  font-weight: 600;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  padding-left: 150px;
+  padding: 80px; 
+  background-color:rgba(248, 248, 250, 0.8);
+}
+
+.edit_your_object {
+  font-weight: 600;
+  font-size: 18px;
+  color: #204969;
+}

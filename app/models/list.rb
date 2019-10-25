@@ -9,8 +9,10 @@ class List < ApplicationRecord
   Proc.new {|attr| attr[:content].blank?}
 
   
-  def items_of_status(status)
-    items.where(status: status)
+  def items_of_status(status_input)
+    items.select do |item|
+      item.status == status_input
+    end
   end
 
   def items_of_category(category)

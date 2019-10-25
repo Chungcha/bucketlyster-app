@@ -1,10 +1,7 @@
 <div class="items_show_background">
 <div class="comments_display"><%= render "comments/comment" %></div>
 
-<% if @item.list.creator == current_user %>
-<%= link_to "Edit", edit_item_path(@item), class: "btn btn-outline-primary" %>
-<%= link_to "Delete", item_path(@item), method: :delete, class:"btn btn-outline-primary" %>
-<% end %>
+
 
 </div>
 
