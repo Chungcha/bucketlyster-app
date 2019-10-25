@@ -5,7 +5,6 @@
 .comments_display{
     margin: auto;
     width: 80%;
-    border: 3px solid green;
     padding: 10px;
     text-align: center;
 }
@@ -13,24 +12,32 @@
 #comment_form{
     margin: auto;
     width: 80%;
-    border: 3px solid green;
+    border: 1px solid rgb(32, 73, 105);
+    border-radius: 0.25rem;
+    background-color:rgb(32, 73, 105);
     padding: 10px;
     text-align: center;
 }
-
 .card-columns {
       column-count: 2;
       
 }
 .items_show_background{
     padding-top:40px;
-    background-image: url("app/assets/images/clement-m-igX2deuD9lc-unsplash.jpg");
-    height: 100%;
+    background-image: url("kelly-sikkema--1_RZL8BGBM-unsplash.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
-    z-index:-1;
+    z-index:1;
+
+    height: 800px;
+  width: auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.9;
 }
 .font1{
     font-family: 'Liu Jian Mao Cao', cursive;
