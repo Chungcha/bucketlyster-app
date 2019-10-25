@@ -1,7 +1,5 @@
 <%= form_for([@item, @item.comments.build]) do |f| %>
-
 <%= f.text_area :content %>
 <%= f.hidden_field :audience_id, value: current_user.id %>
 <%= f.button :submit %>
-
 <% end %>
