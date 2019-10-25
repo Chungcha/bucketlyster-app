@@ -1,18 +1,21 @@
 <div class="outside_container_show">
   <div class="profile_box_start"> </div>
     <div class="container container_main">
-      <div class="row top_row">
+      <div class="row top_row"> 
         <div class="col profile_div">
-          <h1 class="profile_title">Lyster Bio</h1>
-          <img src= "/assets/profile_pic" />
+          <h1 class="profile_title">LYSTER BIO</h1>
+          <img src= "/assets/profile_pic" /> 
           <div class= "profile_info">
-            <h3><%=@user.name%></h3>
+            <h3><%=@user.name%></h3> 
             <h4>
-              <%=@user.fullname%> is a <%=@user.age%> year old <%=@user.gender.downcase%>
+              <%=@user.fullname%> is a <%=@user.age%> years old <%=@user.gender.downcase%>.
             </h4>
-            <h4><%= link_to "Edit my profile", edit_user_path(@user), class: "btn btn-outline-secondary" %></h4>
+            <% if @user == current_user %>
+            <div><%= link_to "Edit my profile", edit_user_path(@user), class: "btn btn-outline-secondary" %>
+            <%= link_to "Make a new bucketlist", new_list_path, class: "btn btn-outline-secondary" %></div><br>
+            <% end %>
             <div id="mini_stats" class="container">
-                <div class="row">
+                <div class="row three_rows">
                   <div class="col">
                     <h6><%= @user.lists.count %></h6>
                     <p><%= @user.lists.count == 1 ? "List" : "Lists" %></p>
@@ -37,7 +40,7 @@
       <div class="container">
         <div class="row">
           <div class="col buckets_list">
-            <h5>Bucketlists you have created:</h5>
+            <h5 class="become_black">Bucketlists you have created:</h5>
             <ul>
               <% @user.lists.each do |list| %>
                 <li><%=link_to list.title, list_path(list)%></li>
@@ -45,14 +48,14 @@
             </ul>
           </div>
           <div class="col followed_list">
-            <h5>Bucketlists you have followed:</h5>
+            <h5 class="become_black">Bucketlists you have followed:</h5>
             <ul>
               <% @user.love_lists.each do |list| %>
                 <li><%= link_to list.title, list_path(list) %></li>
               <% end %>
             </ul>
           </div>
-          <div class="col comments_list">
+          <div class="col comments_list become_black">
             <h5>Comments you have made:</h5>
             <% @user.comments.reverse.each do |comment| %>
               <li>  <%= link_to comment.content, item_path(comment.item) %> - <%= distance_of_time_in_words(Time.now, comment.created_at)%></li>

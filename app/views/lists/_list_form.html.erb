@@ -3,21 +3,21 @@
 <%= form_for(@list) do |f| %>
 
    <%= f.label :title %>
-   <%= f.text_field :title %>
+   <%= f.text_field :title %><br>
 
    <%= f.hidden_field :creator_id, value: session[:user_id] %><br><br>
 
-   <%= f.label :items, "Add an item to your list" %><br>
+   <%= f.label :items, "Add an item to your list!" %><br><br>
    <%= f.fields_for :items, @list.items.build do |item_fields| %>
       <%= item_fields.label :content %>
-      <%= item_fields.text_field :content %>
+      <%= item_fields.text_field :content %><br><br>
       <%= item_fields.label :status %>
-      <%= item_fields.select :status, ["Not started yet", "In progress", "Finished"]%>
+      <%= item_fields.select :status, ["Not started yet", "In progress", "Finished"]%><br><br>
       <%= item_fields.label :category %>
       <%= item_fields.select :category, ["Food/Drink", "Travel/Destination", "Entertainment", "Nature/Wildlife", "Relationship", "Creativity", "Fashion/Beauty", "Other"] %>
 
       <%= item_fields.hidden_field :list_id, value: @list.id %>
-   <% end %>
+   <% end %><br><br>
 
    <%= f.submit "Create a List" %>
 <% end %>

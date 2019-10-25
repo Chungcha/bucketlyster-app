@@ -1,18 +1,19 @@
-<!-- <div class="container background"></div> -->
-
-<div class="container list_show">
+<body class="list_show_two_column">
+<div class="container list_show"> 
     <div class="row">
       <div class="col-sm-8 list_info">
           <div class="list_title"><%= @list.title%></div>
-          <div class="list_creator">by <%= @list.creator.name%></div><br>
+          <div class="list_creator">by <%= link_to @list.creator.name, user_path(@list.creator) %></div><br>
           <div class="follow_count">
           has <%= @list.follows.count %> follows</div>
           <div class="follow_button"><%= render "follows/button" %></div>
+          <div class="each_item">
           <ul>
               <% @list.items.each do |item| %>
-                <li><%= link_to item.content, item_path(item) %></li>
+                <li><%= link_to item.content, item_path(item) %></li><br>
               <% end %>
           </ul>
+        </div>
           <% if current_user == @list.creator %>
           <div class="delete_list_button">
           <%= link_to "Delete this list", list_path(@list), method: :delete, class: "btn btn-secondary" %>
@@ -41,6 +42,6 @@
         <% end %>
     </div>
 </div>
-
+</body>
 
 

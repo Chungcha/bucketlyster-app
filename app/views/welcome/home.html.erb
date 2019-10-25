@@ -6,7 +6,8 @@
 <div class="container">
     <div class="row">
       <div class="col">
-        Most Followed List:
+        Most Followed List
+        <% if Follow.all.length != 0 %>
         <br>
         <span class="welcome_stats">
           <%= pluralize(List.most_followed.follows.count, 'Follower')%>
@@ -15,10 +16,12 @@
         <span class="welcome_title">
           <%= link_to List.most_followed.title, list_path(List.most_followed)%>
         </span>
+        <% end %>
       </div>
       <div class="col">
-        Most Commented Item:
+        Most Commented Item
         <br>
+        <% if Comment.all.length != 0 %>
         <span class="welcome_stats">
           <%= pluralize(Item.most_commented.comments.count, 'Comment')%>
         </span>
@@ -26,6 +29,7 @@
         <span class="welcome_title">
           <%= link_to Item.most_commented.content, item_path(Item.most_commented)%>
         </span>
+        <% end %>
       </div>
     </div>
 </div>

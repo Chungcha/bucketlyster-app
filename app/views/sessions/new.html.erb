@@ -9,6 +9,6 @@
 
   <%= f.submit "log in" %><br><br>
   <div>Not a current user of Bucketlyster?</div>
-  <%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
+  <%= link_to "Sign Up", new_user_path(@user), class: "btn btn-outline-secondary" %>
   <% end %>
 </div>

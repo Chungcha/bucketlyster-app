@@ -5,7 +5,9 @@ class List < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :comments, through: :items
   
-  accepts_nested_attributes_for :items
+  accepts_nested_attributes_for :items, reject_if:
+  Proc.new {|attr| attr[:content].blank?}
+
   
   def items_of_status(status)
     items.where(status: status)
@@ -19,15 +21,8 @@ class List < ApplicationRecord
     items.max_by { |item| item.comments.count }
   end
 
-  # def self.search(search)
-  #   if search
-  #     self.all.select { |list| list.title.downcase.split.include?(search.downcase)}
-  #   else 
-  #     List.all 
-  #   end
-  # end
-
   def self.most_followed
     List.all.max_by{|list|list.follows.count}
   end
+  
 end

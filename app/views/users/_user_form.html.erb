@@ -1,6 +1,5 @@
 <%= render partial: "shared/error_message", locals: {variable: current_user} %>
 
-
 <%= form_for current_user do |f| %>
   <%= f.label :name, "Username" %>
   <%= f.text_field :name %><br><br>
