@@ -3,7 +3,6 @@
 <h6><%= pluralize(@item.comments.count, "comment")%> for this item:</h6>
 <div class="card-columns">
 <% @item.comments.each do |comment| %>
-
     <div class="card each_comment <%=["font1","font2","font3","font4","font5","font6","font7"].sample %>" style="width: 18rem;">
             <div class="card-body">
                 <h5 class="card-title"><%= comment.content %></h5>
