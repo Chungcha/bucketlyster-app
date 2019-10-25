@@ -15,7 +15,7 @@
         <br>
         <span class="welcome_title">
           "<%= link_to List.most_followed.title, list_path(List.most_followed)%>"<br>
-          by <%= List.most_followed.creator.name %>
+          by <%= link_to List.most_followed.creator.name, user_path(List.most_followed.creator) %>
         </span>
         <% end %>
       </div>
@@ -29,7 +29,7 @@
         <br>
         <span class="welcome_title">
           "<%= link_to Item.most_commented.content, item_path(Item.most_commented)%>"<br>
-          of <%= Item.most_commented.list.title %>
+          of <%= link_to Item.most_commented.list.title, list_path(Item.most_commented.list) %>
         </span>
         <% end %>
       </div>
