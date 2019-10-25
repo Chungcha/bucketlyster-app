@@ -11,12 +11,12 @@
 
       <div class="each_list">
         <div class="notstartedyet_items">
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 5%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>              
             <ul>
                 <% @list.items_of_status("Not started yet").each do |item| %>
-                <li>
+                <li class="next_to_icon">
+                    <div class="progress" >
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
                   <div class="d-flex">
                       <%= link_to item.content, item_path(item) %>  
                       <div class="dropdown mr-1">
@@ -28,35 +28,60 @@
                         </div>
                       </div>
                   </div>
+                    
                 </li><br>
               <% end %>
              </ul>
         </div>
         <div class="inprogress_items">
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">In progress</div>
-            </div>              
             <ul>
                 <% @list.items_of_status("In progress").each do |item| %>
-                <li><%= link_to item.content, item_path(item) %></li><br>
+                <li class="next_to_icon">
+                    <div class="progress" >
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 50%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="d-flex">
+                        <%= link_to item.content, item_path(item) %>  
+                        <div class="dropdown mr-1">
+                          <button type="button" class="btn btn-outline-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20", style= "padding: 0px; font-size: 12px;">
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                            <%= link_to "Edit", edit_item_path(item), class: "dropdown-item" %>
+                            <%= link_to "Delete", item_path(item), method: :delete, class: "dropdown-item" %>
+                          </div>
+                        </div>
+                    </div>
+                  </li><br>
               <% end %>
              </ul>
         </div>
         <div class="finished_items">
-            <div class="progress">
-                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">Finished</div>
-            </div>          
               <ul>
               <% @list.items_of_status("Finished").each do |item| %>
-                <li><%= link_to item.content, item_path(item) %></li><br>
+                <li class="next_to_icon">
+                    <div class="progress" >
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 100%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="d-flex">
+                        <%= link_to item.content, item_path(item) %>  
+                        <div class="dropdown mr-1">
+                          <button type="button" class="btn btn-outline-secondary dropdown-toggle" id="dropdownMenuOffset" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20", style= "padding: 0px; font-size: 12px;">
+                          </button>
+                          <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
+                            <%= link_to "Edit", edit_item_path(item), class: "dropdown-item" %>
+                            <%= link_to "Delete", item_path(item), method: :delete, class: "dropdown-item" %>
+                          </div>
+                        </div>
+                    </div>
+                  </li><br>
               <% end %>
           </ul>
         </div>
       </div>
           <% if current_user == @list.creator %>
           <div class="edit_delete_buttons">
-              <%= link_to "Edit this list", edit_list_path(@list), class: "btn btn-info", style: "color: white;" %>
-            <%= link_to "Delete this list", list_path(@list), method: :delete, class: "btn btn-info"%>
+              <%= link_to "Edit this list", edit_list_path(@list), class: "btn btn-outline-dark", style: "color: white;" %>
+            <%= link_to "Delete this list", list_path(@list), method: :delete, class: "btn btn-outline-dark"%>
           </div>
           <% end %>
       </div>

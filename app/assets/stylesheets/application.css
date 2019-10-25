@@ -27,6 +27,7 @@ a {
 .edit_forms {
   color: #204969;
   font-weight: 600;
+  font-size: 17px;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -40,5 +41,5 @@ a {
 .edit_your_object {
   font-weight: 600;
   font-size: 18px;
-  color: #204969;
+  color: black;
 }

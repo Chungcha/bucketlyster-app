@@ -1,4 +1,4 @@
-<%= render partial: "shared/error_message", locals: {variable: current_user} %>
+<%= render partial: "shared/error_message", locals: {variable: @user} %>
 
 <%= form_for current_user do |f| %>
   <%= f.label :name, "Username" %>
